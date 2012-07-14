@@ -116,27 +116,26 @@ if (typeof Object.create !== 'function') {
 			
 		});	
 	}
-
+	
 	$.fn.ssj.defaults = {
-        animateGlowTimeout: 180,  	//milliseconds between each glow animation
-        powerLevelStyleRanges: [
-        	//powering up...
-        	{
-        		maxClicks: 5,		//max clicks before moving to next style range
-        		blurRadiusMax: 16,
-        		blurRadiusMin: 12,
-        		blurColor: '#3D85C6', //blueish color
-        		incrementSize: 6
-        	},
-        	//SSJ!!
-        	{				
+	    animateGlowTimeout: 180,  	//milliseconds between each glow animation
+	    powerLevelStyleRanges: [
+	    	{
+	    		maxClicks: 5,	//max clicks before moving to next style range
+	    		blurRadiusMax: 16,  //max text blur 
+	    		blurRadiusMin: 12,	//min text blur
+	    		blurColor: '#3D85C6', //blueish color
+	    		incrementSize: 6	//amount you want to increment the size on each click
+	    	},
+	    	//SSJ!!
+	    	{				
 	    		incrementSize: 20,
 	    		blurRadiusMin: 18,
 	    		blurRadiusMax: 27,
 	    		blurColor: 'yellow',
 	    		color: 'orange'
 	    	}
-        ]
+	    ]
 	};
 
 })(jQuery, window, document);
