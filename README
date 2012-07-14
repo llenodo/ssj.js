@@ -14,7 +14,7 @@ $.fn.ssj.defaults = {
     		blurRadiusMax: 16,  //max text blur 
     		blurRadiusMin: 12,	//min text blur
     		blurColor: '#3D85C6', //blueish color
-    		incrementSize: 6	//amount you want to increment the size on each click
+    		incrementSize: 6	//amount increment the size on each click
     	},
     	//SSJ!!
     	{				
