@@ -1,49 +1,75 @@
 SSJ.js - Make your text go super saiyin!!
 
-jQuery plugin to add a super saiyin effect to your fonts. Some people might ask why... I prefer the question why not??
+Just what you were looking for - a jQuery plugin to add a super saiyin effect to your text. 
 
-Usage Example:
+Some people might ask why... to them I say why not?!
 
-your html:
-<body>
-	<h1>SSJ.js</h1>
-	<h2>Try clicking the robots</h2>
-	<div class="robot hands-down">j</div>
-	<div class="robot hands-up">i</div>
-</body>
-<script>
-//assuming you already have jQuery loaded here...
-//default options
-$('.robot.hands-down').ssj();
+DEFAULT OPTIONS:
 
-//a little more variation
-$('.robot.hands-up').ssj({
-	powerLevelStyleRanges: [
-    	{
-    		maxClicks: 5,
-    		blurRadiusMax: 12,
-    		blurRadiusMin: 15,
-    		blurColor: 'red',
-    		incrementSize: 7
-    	},
-    	{
-    		maxClicks: 15,
-    		blurRadiusMin: 21,
-    		blurRadiusMax: 26,
-    		incrementSize: 10
-    	},
-    	{
-    		maxClicks: 20,
-    		incrementSize: 15
-    	},
-    	{
-    		incrementSize: 30,
-    		blurRadiusMin: 33,
-    		blurRadiusMax: 40,
-    		blurColor: 'yellow',
-    		color: 'orange'
-    	}
-    ]
-});
+	$.fn.ssj.defaults = {
+        animateGlowTimeout: 180,  	//milliseconds between each glow animation
+        powerLevelStyleRanges: [
+        	//powering up...
+        	{
+        		maxClicks: 5,		//max clicks before moving to next style range
+        		blurRadiusMax: 16,
+        		blurRadiusMin: 12,
+        		blurColor: '#3D85C6', //blueish color
+        		incrementSize: 6
+        	},
+        	//SSJ!!
+        	{				
+	    		incrementSize: 20,
+	    		blurRadiusMin: 18,
+	    		blurRadiusMax: 27,
+	    		blurColor: 'yellow',
+	    		color: 'orange'
+	    	}
+        ]
+	};
+
+
+EXAMPLE:
+
+	<body>
+		<h1>SSJ.js</h1>
+		<h2>Try clicking the robots</h2>
+		<div class="robot hands-down">j</div>
+		<div class="robot hands-up">i</div>
+	</body>
+	<script>
+	//assuming you already have jQuery loaded here...
+	//use default options
+	$('.robot.hands-down').ssj();
+
+	//a little more variation
+	$('.robot.hands-up').ssj({
+		powerLevelStyleRanges: [
+	    	{
+	    		maxClicks: 5,
+	    		blurRadiusMax: 12,
+	    		blurRadiusMin: 15,
+	    		blurColor: 'red',
+	    		incrementSize: 7
+	    	},
+	    	{
+	    		maxClicks: 15,
+	    		blurRadiusMin: 21,
+	    		blurRadiusMax: 26,
+	    		incrementSize: 10
+	    	},
+	    	{
+	    		maxClicks: 20,
+	    		incrementSize: 15
+	    	},
+	    	{
+	    		incrementSize: 30,
+	    		blurRadiusMin: 33,
+	    		blurRadiusMax: 40,
+	    		blurColor: 'yellow',
+	    		color: 'orange'
+	    	}
+	    ]
+	});
 
 </script>
