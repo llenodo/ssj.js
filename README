@@ -1,3 +1,49 @@
-README
+SSJ.js - Make your text go super saiyin!!
 
-Will add more here later...
+jQuery plugin to add a super saiyin effect to your fonts. Some people might ask why... I prefer the question why not??
+
+Usage Example:
+
+your html:
+<body>
+	<h1>SSJ.js</h1>
+	<h2>Try clicking the robots</h2>
+	<div class="robot hands-down">j</div>
+	<div class="robot hands-up">i</div>
+</body>
+<script>
+//assuming you already have jQuery loaded here...
+//default options
+$('.robot.hands-down').ssj();
+
+//a little more variation
+$('.robot.hands-up').ssj({
+	powerLevelStyleRanges: [
+    	{
+    		maxClicks: 5,
+    		blurRadiusMax: 12,
+    		blurRadiusMin: 15,
+    		blurColor: 'red',
+    		incrementSize: 7
+    	},
+    	{
+    		maxClicks: 15,
+    		blurRadiusMin: 21,
+    		blurRadiusMax: 26,
+    		incrementSize: 10
+    	},
+    	{
+    		maxClicks: 20,
+    		incrementSize: 15
+    	},
+    	{
+    		incrementSize: 30,
+    		blurRadiusMin: 33,
+    		blurRadiusMax: 40,
+    		blurColor: 'yellow',
+    		color: 'orange'
+    	}
+    ]
+});
+
+</script>
