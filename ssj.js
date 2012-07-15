@@ -132,7 +132,7 @@ if (typeof Object.create !== 'function') {
 	$.fn.ssj.defaults = {
 	    animateGlowTimeout: 180,  	//milliseconds between each glow animation
 	    immediate: true,	//config to make it happen now or wait for a click
-	    grow: false,		//confic to get bigger with more clicks 
+	    grow: false,		//config to get bigger with more clicks 
 	    powerLevelStyleRanges: [ //array of styles for each 'level' 
 	    	//SSJ!!
 	    	{				
