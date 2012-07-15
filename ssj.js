@@ -38,7 +38,16 @@ if (typeof Object.create !== 'function') {
 
 			this.glowing = false;
 			this.animateGlowTimeout = this.options.animateGlowTimeout;
+			this.animateGlowTransition = this.options.animateGlowTransition;
 			this.clickCount = 0;
+
+			//add css3 transitions if supported for smoother animation
+			this.$el.css({
+				'-webkit-transition': this.animateGlowTransition + 'ms linear 0s',  
+			    '-moz-transition': this.animateGlowTransition + 'ms linear 0s',
+			    '-o-transition': this.animateGlowTransition + 'ms linear 0s',  
+			    'transition': this.animateGlowTransition + 'ms linear 0s'
+			})
 
 			if (this.immediate) {
 				this.animateGlow();
@@ -131,6 +140,7 @@ if (typeof Object.create !== 'function') {
 
 	$.fn.ssj.defaults = {
 	    animateGlowTimeout: 180,  	//milliseconds between each glow animation
+	    animateGlowTransition: 120,  //milliseconds for css3 transition animation
 	    immediate: true,	//config to make it happen now or wait for a click
 	    grow: false,		//config to get bigger with more clicks 
 	    powerLevelStyleRanges: [ //array of styles for each 'level' 
