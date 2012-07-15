@@ -1,5 +1,7 @@
 Just what you were looking for - a jQuery plugin to add a super saiyin effect to your text. 
 
+Uses CSS3 transitions if available for smoother animation.
+
 DEMO:
 
 http://llenodo.github.com/ssj.js
