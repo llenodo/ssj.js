@@ -11,67 +11,20 @@ DEFAULT OPTIONS:
 
 $.fn.ssj.defaults = {
     animateGlowTimeout: 180,  	//milliseconds between each glow animation
-    powerLevelStyleRanges: [
-    	{
-    		maxClicks: 5,	//max clicks before moving to next style range
-    		blurRadiusMax: 16,  //max text blur 
-    		blurRadiusMin: 12,	//min text blur
-    		blurColor: '#3D85C6', //blueish color
-    		incrementSize: 6	//amount increment the size on each click
-    	},
+    immediate: true,	//config to make it happen now or wait for a click
+    grow: false,		//confic to get bigger with more clicks 
+    powerLevelStyleRanges: [ //array of styles for each 'level' 
     	//SSJ!!
     	{				
     		incrementSize: 20,
     		blurRadiusMin: 18,
     		blurRadiusMax: 27,
     		blurColor: 'yellow',
-    		color: 'orange'
+    		color: 'orange',
+    		incrementSize: 10
     	}
     ]
 };
 
-
-EXAMPLE (see index.html):
-
-<body>
-	<h1>SSJ.js</h1>
-	<h2>Try clicking the robots</h2>
-	<div class="robot hands-down">j</div>
-	<div class="robot hands-up">i</div>
-</body>
-<script>
-//assuming you already have jQuery loaded here...
-//use default options
-$('.robot.hands-down').ssj();
-
-//a little more variation
-$('.robot.hands-up').ssj({
-	powerLevelStyleRanges: [
-    	{
-    		maxClicks: 5,
-    		blurRadiusMax: 12,
-    		blurRadiusMin: 15,
-    		blurColor: 'red',
-    		incrementSize: 7
-    	},
-    	{
-    		maxClicks: 15,
-    		blurRadiusMin: 21,
-    		blurRadiusMax: 26,
-    		incrementSize: 10
-    	},
-    	{
-    		maxClicks: 20,
-    		incrementSize: 15
-    	},
-    	{
-    		incrementSize: 30,
-    		blurRadiusMin: 33,
-    		blurRadiusMax: 40,
-    		blurColor: 'yellow',
-    		color: 'orange'
-    	}
-    ]
-});
-
-</script>
+EXAMPLE:
+see index.html
