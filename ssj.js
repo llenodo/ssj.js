@@ -25,6 +25,7 @@ if (typeof Object.create !== 'function') {
 			this.currentStyleIndex = 0;
 			this.powerLevelStyleRanges = this.options.powerLevelStyleRanges;
 			this.immediate = this.options.immediate;
+			this.grow = this.options.grow;
 			this.styleAttrs = this.powerLevelStyleRanges[this.currentStyleIndex];
 
 			this.blurColor = this.styleAttrs.blurColor;
@@ -52,7 +53,7 @@ if (typeof Object.create !== 'function') {
 
 			//grow if we're already glowing - wont grow on the first click
 			if (this.glowing) {
-				this.grow();
+				this.growMe();
 			}
 
 			//start glowing if needed
@@ -99,12 +100,14 @@ if (typeof Object.create !== 'function') {
 	        }, self.animateGlowTimeout);
 		},
 
-		grow: function(){
-			var self = this;
+		growMe: function(){
+			if (this.grow) {
+				var self = this;
 
-			this.$el.animate({
-				'font-size': ('+=' + self.incrementSize)
-			});
+				this.$el.animate({
+					'font-size': ('+=' + self.incrementSize)
+				});
+			}
 		}
 	}
 
@@ -129,6 +132,7 @@ if (typeof Object.create !== 'function') {
 	$.fn.ssj.defaults = {
 	    animateGlowTimeout: 180,  	//milliseconds between each glow animation
 	    immediate: true,
+	    grow: false,
 	    powerLevelStyleRanges: [
 	    	//SSJ!!
 	    	{				
