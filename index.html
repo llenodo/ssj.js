@@ -73,8 +73,30 @@
 <script src="jquery-1.7.2.js"></script>
 <script src="ssj.js"></script>
 <script>
+
 //default options
-$('.robot.hands-down').ssj();
+$('h1').ssj();
+
+$('.robot.hands-down').ssj({
+	immediate:false,
+	powerLevelStyleRanges: [
+    	{
+    		maxClicks: 5,	//max clicks before moving to next style range
+    		blurRadiusMax: 16,  //max text blur 
+    		blurRadiusMin: 12,	//min text blur
+    		blurColor: '#3D85C6', //blueish color
+    		incrementSize: 6	//amount you want to increment the size on each click
+    	},
+    	//SSJ!!
+    	{				
+    		incrementSize: 20,
+    		blurRadiusMin: 18,
+    		blurRadiusMax: 27,
+    		blurColor: 'yellow',
+    		color: 'orange'
+    	}
+    ]
+});
 
 //a little more variation
 $('.robot.hands-up').ssj({
